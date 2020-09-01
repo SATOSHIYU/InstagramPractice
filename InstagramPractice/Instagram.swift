@@ -16,6 +16,22 @@ struct InstagramInfo: Codable {
         struct User: Codable {
             let biography: String
             let external_url: URL?
+            let edge_followed_by: Edge_followed_by
+            
+            struct Edge_followed_by: Codable {
+                let count: Int
+            }
+            
+            let edge_follow: Edge_follow
+            
+            struct Edge_follow: Codable {
+                let count: Int
+            }
+            
+            let full_name: String
+            
+            let category_enum: String
+            
             let edge_owner_to_timeline_media: Edge_owner_to_timeline_media
             
             struct Edge_owner_to_timeline_media: Codable {
@@ -32,6 +48,10 @@ struct InstagramInfo: Codable {
                 }
                 
             }
+            
+            let profile_pic_url_hd: URL
+            
+            let username: String
         }
     }
 }
